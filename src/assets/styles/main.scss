@@ -1,0 +1,42 @@
+// Bootstarp
+@import "bootstrap/scss/bootstrap";
+
+// Setup
+@import "setup/variables";
+@import "setup/functions";
+@import "setup/mixins";
+@import "setup/typography";
+
+// Basics
+@import "basics/helpers";
+@import "basics/layout";
+@import "basics/base";
+
+// Pages
+@import "./pages/item-index";
+
+// Components
+@import "./cmps/item-list";
+@import "./cmps/item-preview";
+@import "./cmps/banner";
+
+body {
+    background-color: rgb(235, 216, 134);
+    p {
+        margin: 0;
+    }
+    h2 {
+        margin: 0;
+    }
+
+    .main-layout {
+        margin: auto;
+        margin-block-start: 10%;
+        border-radius: rem(10px);
+        width: 50%;
+        height: 1000px;
+        background-color: white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.248);
+        padding: rem(20px);
+    }
+}

@@ -1,0 +1,18 @@
+.banner {
+    display: flex;
+    flex-direction: column;
+    gap: rem(25px);
+    font-family: outfit;
+    width: 100%;
+    overflow: hidden;
+    img {
+        border-radius: rem(10px);
+    }
+    .title {
+        font-family: young-serif;
+        font-size: rem(16px);
+    }
+    p {
+        font-size: rem(8px);
+    }
+}
