@@ -1,0 +1,25 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: rem(15px);
+    height: 100px;
+    background-color: gainsboro;
+
+    nav {
+        .nav-list {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: rem(20px);
+
+            & a {
+                color: green;
+            }
+
+            & a.active {
+                color: red;
+            } 
+        }
+    }
+}

@@ -16,7 +16,6 @@ async function query(filterBy = { txt: '', price: 0 }) {
 function getById(productId) {
     return httpService.get(`product/${productId}`)
 }
-
 async function remove(productId) {
     return httpService.delete(`product/${productId}`)
 }

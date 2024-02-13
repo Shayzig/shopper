@@ -1,0 +1,25 @@
+.home-page {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    height: 700px;
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: (rem(50px));
+
+        h1 {
+            font-size: rem(70px);
+        }
+        
+    }
+
+    .hero-img-wrapper {
+        justify-self: center;
+        align-self: center;
+        img {
+            height: 400px;
+        }
+    }
+}

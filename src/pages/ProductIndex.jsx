@@ -1,8 +1,13 @@
+import { useParams } from "react-router";
 
-export function ItemIndex() {
+export function ProductIndex() {
+  const params = useParams();
+
+  console.log(params);
 
   return (
-    <section className="item-index">
+    <section className="product-index">
+      <h1>{params.productType}</h1>
     </section>
   );
 }
