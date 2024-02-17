@@ -23,6 +23,7 @@ export default function RootLayout() {
       <div className="main-layout">
         <Outlet />
         <h1>{JSON.stringify(import.meta.env.VITE_REACT_API)}</h1>
+        <h1>hello</h1>
       </div>
     </div>
   );
