@@ -1,43 +1,41 @@
-import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink, useParams } from "react-router-dom";
+import { signout } from "../store/user/user-action";
 
 export default function Header() {
+  const loggedinUser = useSelector((state) => state.user.loggedinUser);
+  const dispatch = useDispatch();
+
+  function handeleSignout() {
+    dispatch(signout());
+  }
+
   return (
     <header>
       <div className="logo">
-        <h3>Shopper</h3>
-        {/* img logo */}
+        <NavLink to="/">
+          <h3>Login</h3>
+        </NavLink>
       </div>
-      <nav>
-        <ul className="nav-list">
-          <NavLink
-            to={"/mens"}
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            <li>Mens</li>
-          </NavLink>
-          <NavLink
-            to={"/womens"}
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            <li>Womens</li>
-          </NavLink>
-          <NavLink
-            to={"/kids"}
-            className={({ isActive }) => (isActive ? "active" : "")}
-          >
-            <li>Kids</li>
-          </NavLink>
-        </ul>
-      </nav>
 
-      <div className="user">
-        <NavLink to={'/login'}>
+      {loggedinUser && (
+        <div className="user">
+          <p className="loggedin-user">
+            Loggedin User: {loggedinUser.username}
+          </p>
+          <p className="loggedin-user">User Score: {loggedinUser.score}</p>
+        </div>
+      )}
+
+      {loggedinUser ? (
+        <NavLink to='/'>
+          <button onClick={handeleSignout}>Signout</button>
+        </NavLink>
+      ) : (
+        <NavLink to={"/login"}>
           <button>Login</button>
         </NavLink>
-        <NavLink to={'/cart'}>
-          <button>Cart</button>
-        </NavLink>
-      </div>
+      )}
     </header>
   );
 }
