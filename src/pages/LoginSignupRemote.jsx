@@ -2,11 +2,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { signin, signup } from "../store/user/user-action";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-// import { userService } from "../services/user.service.local";
 import { userService } from "../services/user.service";
 import { NavLink } from "react-router-dom";
 
-export default function LoginSignup() {
+export default function LoginSignupRemote() {
   const [isLogin, setIsLogin] = useState(true);
   const [error, setError] = useState();
   const dispatch = useDispatch();
@@ -31,9 +30,6 @@ export default function LoginSignup() {
       // navigate("/");
     } catch (error) {
       // METHOD-#1:.5 - Setting the error
-      // NOTE: Local:
-      // setError(error);
-      // NOTE: Server:
       setError(error.response.data);
     }
   }

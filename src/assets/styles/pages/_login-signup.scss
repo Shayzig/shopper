@@ -1,0 +1,16 @@
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        gap: rem(20px);
+
+        & > :last-child {
+            margin-block-start: rem(20px);
+        }
+    }
+}
